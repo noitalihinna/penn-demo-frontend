@@ -31,6 +31,7 @@
         <el-table-column prop="password" label="密码" width="120" />
         <el-table-column prop="email" label="邮箱" width="180" />
         <el-table-column prop="phone" label="手机号" width="130" />
+        <el-table-column prop="address" label="地址" width="180" />
         <el-table-column prop="status" label="状态" width="100">
           <template #default="{ row }">
             <el-tag :type="row.status === 1 ? 'success' : 'danger'">
@@ -87,6 +88,9 @@
         <el-form-item label="手机号" prop="phone">
           <el-input v-model="formData.phone" placeholder="请输入手机号" />
         </el-form-item>
+        <el-form-item label="地址" prop="address">
+          <el-input v-model="formData.address" placeholder="请输入地址" />
+        </el-form-item>
         <el-form-item label="状态" prop="status">
           <el-switch v-model="formData.status" :active-value="1" :inactive-value="0" />
         </el-form-item>
@@ -130,6 +134,7 @@ const formData = reactive({
   password: '',
   email: '',
   phone: '',
+  address: '',
   status: 1
 })
 
@@ -170,6 +175,7 @@ const handleAdd = () => {
     password: '',
     email: '',
     phone: '',
+    address: '',
     status: 1
   })
   dialogVisible.value = true
